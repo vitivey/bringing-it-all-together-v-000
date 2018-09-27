@@ -38,7 +38,7 @@ class Dog
       FROM dogs
       WHERE name = ? AND breed = ?;
     SQL
-    exists = DB[:conn].execute(sql_check)
+    exists = DB[:conn].execute(sql_check, self.name, self.breed)
     if exists
       self
     else
