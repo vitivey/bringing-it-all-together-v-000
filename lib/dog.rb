@@ -54,6 +54,8 @@ class Dog
       self.id = id
       self
     end
+
+    binding.pry
   end
 
   def self.create(hash)
