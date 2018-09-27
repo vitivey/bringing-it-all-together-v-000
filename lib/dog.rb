@@ -9,6 +9,22 @@ class Dog
     @id = id
   end
 
+  def create_table
+    sql = <<-SQL
+      CREATE TABLE dogs (
+        id INTEGER PRIMARY KEY
+        name TEXT,
+        breed TEXT
+      )
+      
+    SQL
+
+  end
+
+  def drop_table
+
+  end
+
 
 
 end
