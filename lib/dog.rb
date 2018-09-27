@@ -39,6 +39,7 @@ class Dog
       WHERE name = ? AND breed = ?;
     SQL
     exists = DB[:conn].execute(sql_check, self.name, self.breed).flatten
+
     if exists
       self
     else
