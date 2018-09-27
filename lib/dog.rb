@@ -40,7 +40,7 @@ class Dog
     SQL
     exists = DB[:conn].execute(sql_check, self.name, self.breed).flatten
 
-    if !!exists
+    if !exists.empty?
       self
     else
       sql = <<-SQL
@@ -55,7 +55,6 @@ class Dog
       self
     end
 
-    binding.pry
   end
 
   def self.create(hash)
