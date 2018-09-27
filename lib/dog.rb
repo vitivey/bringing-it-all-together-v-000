@@ -34,7 +34,7 @@ class Dog
 
   def save
 
-    dog = Dog.new(name, breed)
+    
   end
 
 
