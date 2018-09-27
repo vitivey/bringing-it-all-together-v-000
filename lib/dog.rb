@@ -3,7 +3,7 @@ require "pry"
 class Dog
   attr_accessor :name, :breed, :id
 
-  def initialize (hash)
+  def initialize (name:, breed:, id: nil)
     # @name = name
     # @breed = breed
     # @id = id
@@ -45,9 +45,6 @@ class Dog
 
   def self.create(hash)
     dog = Dog.new(hash)
-    hash.each do |key, value|
-
-    end
     dog.save
     dog
   end
