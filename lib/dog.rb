@@ -51,7 +51,6 @@ class Dog
 
   def self.find_by_id(id)
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE id = ?", id).flatten
-    binding.pry
     Dog.new_from_db(dog)
   end
 
@@ -61,7 +60,7 @@ class Dog
       FROM dogs
       WHERE name = ? AND breed = ?;
     SQL
-    result = DB[:conn].execute(sql, hash[:name], hash[:breed])
+    result = DB[:conn].execute(sql, hash[:name], hash[:breed]).flatten
     if result
       dog = Dog.new_from_db(result)
     else
