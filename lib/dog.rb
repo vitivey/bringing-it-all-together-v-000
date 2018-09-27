@@ -4,9 +4,9 @@ class Dog
   attr_accessor :name, :breed, :id
 
   def initialize (name:, breed:, id: nil)
-    @name = name
-    @breed = breed
-    @id = id
+    # @name = name
+    # @breed = breed
+    # @id = id
   end
 
   def self.create_table
@@ -29,7 +29,7 @@ class Dog
     name=row[1]
     breed=row[2]
     hash={:name => name, :breed => breed, :id => id}
-    dog = Dog.new(hash)
+    dog = Dog.create(hash)
   end
 
   def save
@@ -43,8 +43,10 @@ class Dog
     self
   end
 
-  def self.create
-
+  def self.create(hash)
+    dog = Dog.new(hash)
+    dog.save
+    dog
   end
 
   def self.find_by_id
