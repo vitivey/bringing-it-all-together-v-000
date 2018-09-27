@@ -46,7 +46,7 @@ class Dog
   def self.create(hash)
     dog = Dog.new(hash)
     hash.each do |key, value|
-      
+
     end
     dog.save
     dog
