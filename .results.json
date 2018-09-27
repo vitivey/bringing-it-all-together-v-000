@@ -1,1 +1,0 @@
-{"version":"3.5.4","examples":[{"description":"has a name and a breed","full_description":"Dog attributes has a name and a breed","status":"passed","file_path":"./spec/dog_spec.rb","line_number":21,"run_time":12.51544765,"pending_message":null}],"summary":{"duration":12.516350765,"example_count":1,"failure_count":0,"pending_count":0},"summary_line":"1 example, 0 failures"}
