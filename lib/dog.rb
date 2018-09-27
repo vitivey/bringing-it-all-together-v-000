@@ -33,14 +33,26 @@ class Dog
   end
 
   def save
-    sql = <<-SQL
-      INSERT INTO dogs (name, breed)
-      VALUES (?, ?)
+    sql_check = <<-SQL
+      SELECT *
+      FROM dogs
+      WHERE name = ? AND breed = ?;
     SQL
-    DB[:conn].execute(sql, self.name, self.breed)
-    id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs").flatten.first
-    self.id = id
-    self
+    exists = DB[:conn].execute(sql_check)
+    if exists
+      self
+    else
+      sql = <<-SQL
+        INSERT INTO dogs (name, breed)
+        VALUES (?, ?)
+      SQL
+      
+      DB[:conn].execute(sql, self.name, self.breed) 
+
+      id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs").flatten.first
+      self.id = id
+      self
+    end
   end
 
   def self.create(hash)
