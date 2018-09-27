@@ -40,7 +40,7 @@ class Dog
     SQL
     exists = DB[:conn].execute(sql_check, self.name, self.breed).flatten
 
-    if exists
+    if !!exists
       self
     else
       sql = <<-SQL
