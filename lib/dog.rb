@@ -90,7 +90,7 @@ class Dog
 
   def update
     sql = <<-SQL
-      UPDATE dogs 
+      UPDATE dogs
       SET name = ?, breed = ?
       WHERE name = ?, breed = ?;
     SQL
