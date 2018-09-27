@@ -84,7 +84,7 @@ class Dog
   end
 
   def self.find_by_name(name)
-    dog=DB[:conn].execute("SELECT * FROM dogs WHERE name = ?", self.name).flatten
+    dog=DB[:conn].execute("SELECT * FROM dogs WHERE name = ?", name).flatten
     Dog.new_from_db(dog)
   end
 
