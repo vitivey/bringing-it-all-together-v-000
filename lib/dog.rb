@@ -54,8 +54,8 @@ class Dog
     Dog.new_from_db(dog)
   end
 
-  def self.find_or_create_by
-
+  def self.find_or_create_by(something)
+    binding.pry
   end
 
 
