@@ -29,7 +29,7 @@ class Dog
     name=row[1]
     breed=row[2]
     hash={:name => name, :breed => breed, :id => id}
-    dog = Dog.new(hash[:name], hash[:breed], hash[:id])
+    dog = Dog.new(hash)
   end
 
   def save
